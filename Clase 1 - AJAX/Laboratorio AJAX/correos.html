@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        margin: 0 auto;
+        width: 800px;
+        border: 1px solid black;
+        gap: 20px;
+      }
+
+      .col {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .row {
+        display: flex;
+        gap: 20px;
+      }
+
+      .boton {
+        padding: 10px 20px;
+        text-align: center;
+        width: 10rem;
+      }
+
+      #tablaCorreos {
+        width: 100%;
+        border-collapse: collapse;
+
+        & td {
+          padding: 10px;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div style="width: 20%"></div>
+        <div>
+          <button
+            class="boton"
+            style="
+              color: white;
+              background-color: rgb(122, 122, 227);
+              border: 1px solid blue;
+            "
+            onclick="cargarFormulario()"
+          >
+            Redactar
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" style="width: 20%">
+          <button
+            class="boton"
+            style="border: 1px solid blue"
+            onclick="cargarCorreos('entrada')"
+          >
+            Bandeja de entrada
+          </button>
+          <button
+            class="boton"
+            style="border: 1px solid orange"
+            onclick="cargarCorreos('salida')"
+          >
+            Bandeja de salida
+          </button>
+        </div>
+        <div
+          style="width: 80%; border: 1px solid black; padding: 20px"
+          id="correos"
+        >
+          <table id="tablaCorreos" border="1">
+            <thead>
+              <tr>
+                <th>Correo</th>
+                <th>Asunto</th>
+                <th>Estado</th>
+                <th>Operación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="4">Sin resultados</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
