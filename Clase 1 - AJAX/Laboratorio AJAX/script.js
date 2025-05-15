@@ -1,4 +1,6 @@
 let correos = document.querySelector("#correos");
+let overlay = document.querySelector(".overlay");
+let botonCerrar = document.querySelector(".cerrar");
 
 async function cargarCorreos(tipo) {
   const response = await fetch("bandeja.php?tipo=" + tipo);
@@ -12,13 +14,24 @@ async function cargarCorreos(tipo) {
       fetch(`mensaje.php?id=${id}`)
         .then((response) => response.json())
         .then((data) => {
-          alert(
-            `De: ${data.correo}\nAsunto: ${data.asunto}\nMensaje: ${data.mensaje}`
-          );
+          correo.innerHTML = `De: ${data.correo}`;
+          asunto.innerHTML = `Asunto: ${data.asunto}`;
+          mensaje.innerHTML = `Mensaje: ${data.mensaje}`;
+          overlay.style.display = "flex";
         });
     });
   });
 }
+
+botonCerrar.addEventListener("click", function () {
+  overlay.style.display = "none";
+});
+
+overlay.addEventListener("click", function (e) {
+  if (e.target === overlay) {
+    overlay.style.display = "none";
+  }
+});
 
 function cargarFormulario() {
   var ajax = new XMLHttpRequest();
