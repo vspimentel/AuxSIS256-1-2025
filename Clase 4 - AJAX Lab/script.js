@@ -2,6 +2,25 @@ let contenido = document.querySelector("#contenido");
 let overlay;
 let central;
 
+function pregunta1() {
+  contenido.innerHTML = `<div class="card">
+            <div>Examen final SIS25</div>
+            <div>Estudiante: Pimentel Vito</div>
+            <div>CU: 111-318</div>
+            <div>
+              Semestre:
+              <span
+                style="
+                  border: 2px solid black;
+                  background-color: yellow;
+                  padding: 5px;
+                "
+                >1/2025</span
+              >
+            </div>
+          </div>`;
+}
+
 function cargarLogin() {
   fetch(`login.html`)
     .then((response) => response.text())

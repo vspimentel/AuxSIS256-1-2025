@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div style="width: 10%" class="logo">
+          <img src="images/universidad.png" style="width: 100%" />
+        </div>
+        <div class="navbar" style="width: 90%">
+          <div class="menu">
+            <a href="" class="option">Inicio</a>
+            <a href="javascript:pregunta2()" class="option">Lista</a>
+            <a href="javascript:pregunta3()" class="option">Horarios</a>
+            <a href="javascript:pregunta4()" class="option">Calificaciones</a>
+            <a href="javascript:pregunta5()" class="option">Informes</a>
+          </div>
+          <div id="titulo">Inicio</div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="sidebar">
+          <div class="titulo">Asignaturas</div>
+          <div id="menu">
+            <div class="option materia selected">SIS256</div>
+            <div class="option materia">SIS258</div>
+            <div class="option materia">SIS406</div>
+          </div>
+        </div>
+        <div id="contenido">
+          <div class="card">
+            <div>Examen final SIS25</div>
+            <div>Estudiante: Pimentel Vito</div>
+            <div>CU: 111-318</div>
+            <div>
+              Semestre:
+              <span
+                style="
+                  border: 2px solid black;
+                  background-color: yellow;
+                  padding: 5px;
+                "
+                >1/2025</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
